@@ -1,24 +1,82 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
 
+import Card from './components/Card/Card';
 function App() {
+  const alphabets = [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z'
+  ];
+  const animals = [
+    {
+      name: 'Dog',
+      url: 'dog.wav',
+      image: 'dog.svg'
+    },
+    {
+      name: 'Elephant',
+      url: 'elephant.wav',
+      image: 'elephant.svg'
+    },
+    {
+      name: 'Jaguar',
+      url: 'jaguar.wav',
+      image: 'tiger.svg'
+    },
+    {
+      name: 'Monkey',
+      url: 'monkey.wav',
+      image: 'monkey.svg'
+    },
+    {
+      name: 'Pig',
+      url: 'pig.wav',
+      image: 'pig.svg'
+    },
+    {
+      name: 'Zebra',
+      url: 'zebra.wav',
+      image: 'zebra.svg'
+    }
+  ];
+  const renderCards = () =>
+    animals.map((animal, i) => (
+      <Card
+        key={i}
+        title={animal.name}
+        url={animal.url}
+        image={animal.image}
+      ></Card>
+    ));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Header></Header>
+      <section className="cards">{renderCards()} </section>
     </div>
   );
 }
