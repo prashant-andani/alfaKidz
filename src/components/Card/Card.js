@@ -10,9 +10,6 @@ const Card = ({ title, url, image }) => {
     });
   };
 
-  const getImgUrl = () =>
-    import(`../../assets/images/${image}`).then(image => image.default);
-
   return (
     <div className="card" onClick={play}>
       <div>
