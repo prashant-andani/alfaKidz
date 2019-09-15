@@ -34,6 +34,16 @@ function App() {
   ];
   const animals = [
     {
+      name: 'Cat',
+      url: 'cat.wav',
+      image: 'cat.svg'
+    },
+    {
+      name: 'Cow',
+      url: 'cow.wav',
+      image: 'cow.svg'
+    },
+    {
       name: 'Dog',
       url: 'dog.wav',
       image: 'dog.svg'
@@ -42,6 +52,16 @@ function App() {
       name: 'Elephant',
       url: 'elephant.wav',
       image: 'elephant.svg'
+    },
+    {
+      name: 'Hen',
+      url: 'hen.wav',
+      image: 'hen.svg'
+    },
+    {
+      name: 'Horse',
+      url: 'horse.wav',
+      image: 'horse.svg'
     },
     {
       name: 'Jaguar',
