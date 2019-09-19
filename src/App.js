@@ -3,9 +3,13 @@ import './App.css';
 import Header from './components/Header/Header';
 import Card from './components/Card/Card';
 import { animals } from './constants';
+import cx from 'classnames';
 
 function App() {
   const [data, setData] = useState(animals);
+  const hours = new Date().getHours();
+  const isDayTime = hours > 6 && hours < 18;
+  const classNames = cx('App', { day: isDayTime, night: !isDayTime });
   const renderCards = () =>
     data.map((animal, i) => (
       <Card
@@ -17,8 +21,9 @@ function App() {
     ));
 
   return (
-    <div className="">
+    <div className={classNames}>
       <Header></Header>
+      {isDayTime}
       <section className="cards">{renderCards()} </section>
     </div>
   );

@@ -36,12 +36,3 @@ Card.propTypes = {
 Card.defaultProps = {};
 
 export default Card;
-console.log('hey');
-var prom = new Promise(function(resolve, reject) {
-  console.log('inside promise');
-  resolve(true);
-});
-prom.then(function() {
-  console.log('inside then');
-});
-console.log('after');
