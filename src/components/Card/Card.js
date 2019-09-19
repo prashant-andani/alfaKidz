@@ -1,19 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.scss';
-const Card = ({ title, url, image }) => {
+const Card = ({ title, url, image = '' }) => {
   const play = () => {
+    if (!url) {
+      return;
+    }
     import(`../../assets/animals/${url}`).then(sound => {
-      console.log(sound);
       const audio = new Audio(sound.default);
       audio.play();
+      audio.onended = () => {
+        console.log('ended audio');
+      };
     });
   };
 
   return (
-    <div className="card" onClick={play}>
+    <div className="card hvr-icon-grow" onClick={play}>
       <div>
-        <img src={require(`../../assets/images/${image}`)} alt={title} />
+        <img
+          className="hvr-icon"
+          src={require(`../../assets/images/${image}`)}
+          alt={title}
+        />
       </div>
     </div>
   );
@@ -27,3 +36,12 @@ Card.propTypes = {
 Card.defaultProps = {};
 
 export default Card;
+console.log('hey');
+var prom = new Promise(function(resolve, reject) {
+  console.log('inside promise');
+  resolve(true);
+});
+prom.then(function() {
+  console.log('inside then');
+});
+console.log('after');
