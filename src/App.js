@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Card from './components/Card/Card';
 import { animals } from './constants';
 import cx from 'classnames';
-
+import HeaderActions from './components/HeaderActions/HeaderActions';
 function App() {
   const [data, setData] = useState(animals);
   const hours = new Date().getHours();
@@ -23,6 +23,7 @@ function App() {
   return (
     <div className={classNames}>
       <Header></Header>
+      <HeaderActions></HeaderActions>
       {isDayTime}
       <section className="cards">{renderCards()} </section>
     </div>
