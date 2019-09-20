@@ -8,7 +8,18 @@ const Card = ({ title, url, image = '' }) => {
     }
     import(`../../assets/animals/${url}`).then(sound => {
       const audio = new Audio(sound.default);
-      audio.play();
+      const audioPromise = audio.play();
+      if (audioPromise !== undefined) {
+        audioPromise
+          .catch(error => {
+            console.log(error);
+            // Auto-play was prevented
+            // Show a UI element to let the user manually start playback
+          })
+          .then(() => {
+            // Auto-play started
+          });
+      }
       audio.onended = () => {
         console.log('ended audio');
       };
