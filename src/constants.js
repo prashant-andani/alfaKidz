@@ -73,6 +73,11 @@ const animals = [
     image: 'pig.svg'
   },
   {
+    name: 'Goat',
+    url: 'goat.wav',
+    image: 'goat.svg'
+  },
+  {
     name: 'Zebra',
     url: 'zebra.wav',
     image: 'zebra.svg'
