@@ -4,16 +4,37 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.1",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.1",
     "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
+  },
+  "lint-staged": {
+    "unstaged": "true",
+    "src/**/*.{js,jsx,json,css,md}": [
+      "eslint --fix src",
+      "prettier",
+      "git add"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "lint": "eslint --fix src/",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": "react-app"

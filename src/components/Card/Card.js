@@ -1,6 +1,8 @@
+/* eslint-disable import/no-dynamic-require */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.scss';
+
 const Card = ({ title, url, image = '' }) => {
   const play = () => {
     if (!url) {
@@ -12,7 +14,6 @@ const Card = ({ title, url, image = '' }) => {
       if (audioPromise !== undefined) {
         audioPromise
           .catch(error => {
-            console.log(error);
             // Auto-play was prevented
             // Show a UI element to let the user manually start playback
           })
@@ -20,16 +21,16 @@ const Card = ({ title, url, image = '' }) => {
             // Auto-play started
           });
       }
-      audio.onended = () => {
-        console.log('ended audio');
-      };
+      audio.onended = () => {};
     });
   };
-
+  // eslint-disable-next-line global-require
+  const imageSrc = require(`../../assets/images/${image}`);
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="card hvr-icon-grow" onClick={play}>
       <div>
-        <img className="hvr-icon" src={require(`../../assets/images/${image}`)} alt={title} />
+        <img className="hvr-icon" src={imageSrc} alt={title} />
       </div>
     </div>
   );
@@ -37,9 +38,12 @@ const Card = ({ title, url, image = '' }) => {
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
+  image: PropTypes.string
 };
 
-Card.defaultProps = {};
+Card.defaultProps = {
+  image: ''
+};
 
 export default Card;
