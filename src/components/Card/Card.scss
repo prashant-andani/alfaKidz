@@ -29,3 +29,37 @@
   .hvr-grow:active {
     transform: scale(1.1);
   }
+
+  .hvr-grow:active {
+    animation: shake 0.5s;
+  }
+
+  @-webkit-keyframes heartBeat {
+    0%, 28%, 70% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    14%, 42% {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+    }
+  }
+  
+  @keyframes heartBeat {
+    0%, 28%, 70% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    14%, 42% {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+    }
+  }
+  
+  .heartBeat {
+    -webkit-animation: heartBeat ease-in-out 1.3s infinite;
+    animation: heartBeat 1.3s ease-in-out infinite;
+  }
+  
