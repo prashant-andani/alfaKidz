@@ -4,25 +4,15 @@ import PropTypes from 'prop-types';
 import './Card.scss';
 
 const Card = ({ title, url, image = '' }) => {
-  const play = () => {
-    if (!url) {
-      return;
-    }
+  let audio = null;
+  if (!audio) {
     import(`../../assets/animals/${url}`).then(sound => {
-      const audio = new Audio(sound.default);
-      const audioPromise = audio.play();
-      if (audioPromise !== undefined) {
-        audioPromise
-          .catch(error => {
-            // Auto-play was prevented
-            // Show a UI element to let the user manually start playback
-          })
-          .then(() => {
-            // Auto-play started
-          });
-      }
+      audio = new Audio(sound.default);
       audio.onended = () => {};
     });
+  }
+  const play = () => {
+    audio.play();
   };
   // eslint-disable-next-line global-require
   const imageSrc = require(`../../assets/images/${image}`);
