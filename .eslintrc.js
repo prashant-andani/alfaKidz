@@ -34,16 +34,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['stories/*.stories.js', 'setupTests.js'],
+      files: ['serviceWorker.js'],
       rules: {
-        'import/no-extraneous-dependencies': 'off',
-        'no-console': [0]
-      }
-    },
-    {
-      files: ['src/store/sagas/*.saga.js'],
-      rules: {
-        'import/prefer-default-export': 'off'
+        'no-console': [0],
+        'no-param-reassign': [0]
       }
     }
   ]
