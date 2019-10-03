@@ -29,11 +29,7 @@ const Card = ({ title, url, image = '' }) => {
   return (
     <div className="card hvr-icon-grow" onClick={play}>
       <div>
-        <img
-          className="hvr-icon"
-          src={require(`../../assets/images/${image}`)}
-          alt={title}
-        />
+        <img className="hvr-icon" src={require(`../../assets/images/${image}`)} alt={title} />
       </div>
     </div>
   );
