@@ -7,7 +7,6 @@ import './Card.scss';
 const Card = ({ title, url, image = '' }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Masters
   let audio = null;
   if (!audio) {
     import(`../../assets/animals/${url}`).then(sound => {
