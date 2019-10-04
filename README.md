@@ -38,6 +38,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/prashant-andani"><img src="https://avatars3.githubusercontent.com/u/829627?v=4" width="100px;" alt="Prashant Andani"/><br /><sub><b>Prashant Andani</b></sub></a><br /><a href="https://github.com/prashant-andani/alfaKidz/commits?author=prashant-andani" title="Code">💻</a> <a href="#design-prashant-andani" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/malothnaresh"><img src="https://avatars1.githubusercontent.com/u/16411866?v=4" width="100px;" alt="Maloth Naresh"/><br /><sub><b>Maloth Naresh</b></sub></a><br /><a href="https://github.com/prashant-andani/alfaKidz/commits?author=malothnaresh" title="Code">💻</a> <a href="#design-malothnaresh" title="Design">🎨</a></td>
   </tr>
 </table>
 
