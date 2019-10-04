@@ -8,12 +8,12 @@
 
 <p>Kids Entertainment web app - Animals, Birds sound(Coming soon....).</p>
 </div>
-
-<hr />
-
 [![PRs Welcome][prs-badge]][prs] 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
+<hr />
+
+<img height="500" width="300" src="https://ik.imagekit.io/alfakidz/28147_zgMkwrlon.jpg"/>
 </div>
 
 <!-- prettier-ignore-start -->
