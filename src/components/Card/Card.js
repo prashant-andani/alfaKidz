@@ -6,9 +6,12 @@ import './Card.scss';
 
 const Card = ({ title, url, image = '' }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-
+  // eslint-disable-next-line global-require
+  const imageSrc = require(`../../assets/images/${image}`);
+  const classNames = cx('hvr-icon', { heartBeat: isPlaying });
   let audio = null;
-  if (!audio) {
+
+  if (!audio && url) {
     import(`../../assets/animals/${url}`).then(sound => {
       audio = new Audio(sound.default);
       audio.onended = () => {
@@ -20,9 +23,7 @@ const Card = ({ title, url, image = '' }) => {
     setIsPlaying(true);
     audio.play();
   };
-  // eslint-disable-next-line global-require
-  const imageSrc = require(`../../assets/images/${image}`);
-  const classNames = cx('hvr-icon', { heartBeat: isPlaying });
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="card hvr-icon-grow" onClick={play}>
