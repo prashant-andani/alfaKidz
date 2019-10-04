@@ -1,0 +1,29 @@
+.btn {
+  font: {
+    weight: 600;
+    size: 14px;
+  }
+  border: none;
+  color: white;
+  line-height: 24px;
+  padding: .6rem 1.4rem;
+  letter-spacing: 1.39px;
+  cursor: pointer;
+  &.btn-large {
+    width: 330px;
+  }
+  &.btn-sm {
+    padding: .4rem 1.4rem;
+  }
+  &.btn-inverse {
+    border: 1px solid gray;
+    background: white;
+    color: gray;
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: .5;
+    outline: none;
+    cursor: no-drop;
+  }
+}
