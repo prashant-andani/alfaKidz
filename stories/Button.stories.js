@@ -4,10 +4,8 @@ import Button from '../src/components/Button/Button';
 
 storiesOf('Button', module)
   .addWithJSX('Primary Button', () => <Button className="btn">Create New</Button>)
-  .addWithJSX('Large Button', () => <Button className="btn-large">Click</Button>)
-  .addWithJSX('Inverse Button', () => <Button className="btn-inverse">Review & Publish</Button>)
   .addWithJSX('Disabled Button', () => (
-    <Button disabled className="btn">
+    <Button disabled className="btn" label="Example Button">
       Review & Publish
     </Button>
   ));
