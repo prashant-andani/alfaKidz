@@ -1,6 +1,8 @@
+@import 'src/styles/variables';
+
 .header {
   height: 60px;
-  background-color: black;
+  background-color: $orange-color;
   .title {
     padding: 10px;
     color: white;

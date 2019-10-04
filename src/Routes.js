@@ -26,7 +26,7 @@ const Routes = ({ childProps }) => {
         <Route path="/learning/:category?" exact component={AsyncLearning} props={props} />
 
         {/* Finally, catch all unmatched routes */}
-        <Redirect to="/learning/:category?" />
+        <Redirect to="/entertainment" />
       </Switch>
     </BrowserRouter>
   );
