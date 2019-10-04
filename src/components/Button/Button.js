@@ -6,7 +6,7 @@ import './Button.scss';
 const Button = ({ label, onClick, disabled, ...rest }) => {
   return (
     <button className="btn btn-inverse" onClick={onClick} {...rest}>
-      {rest.children}
+      {label}
     </button>
   );
 };
