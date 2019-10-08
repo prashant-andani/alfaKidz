@@ -7,7 +7,21 @@
 }
 .night {
   background-color: #100e17;
+}
+.MuiAppBar-colorPrimary {
+  color: #000;
+  background-color: #fff;
+}
 
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  transition: background .3s linear;
+  background-image: -webkit-gradient(linear,left bottom,left top,from(#5ee7df),to(#66a6ff));
+  background-image: linear-gradient(to top,#5ee7df 0,#66a6ff 100%);
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
