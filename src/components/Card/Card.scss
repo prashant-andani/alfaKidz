@@ -1,18 +1,17 @@
 .card {
-  max-width: 23vw;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  box-shadow: 0 0 2rem rgba(0,0,255,.1);
-  justify-items: center;
-  padding: 2rem;
-  margin: 1.6rem;
-  width: 9rem;
-  height: 9rem;
-  cursor: pointer;
-  background-color: #fff;
-  border-radius: 1.75rem;
-  animation: 1s ease-in-out slideup,1.25s ease-in-out fadein;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    justify-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    width: 9rem;
+    height: 9rem;
+    background-color: #fff;
+    border-radius: 1.75rem;
+    animation: 1s ease-in-out slideup,1.25s ease-in-out fadein;
+    cursor: pointer;
   .title {
     font-size: 2em;
   }
