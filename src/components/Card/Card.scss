@@ -1,6 +1,4 @@
 .card {
-  padding: 5px 20px;
-  margin: 10px;
   max-width: 23vw;
   display: grid;
   grid-template-columns: 1fr;
@@ -15,7 +13,6 @@
   background-color: #fff;
   border-radius: 1.75rem;
   animation: 1s ease-in-out slideup,1.25s ease-in-out fadein;
-  cursor: pointer;
   .title {
     font-size: 2em;
   }
