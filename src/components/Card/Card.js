@@ -30,6 +30,7 @@ const Card = ({ title, url, image = '' }) => {
       <div>
         <img id={title} className={classNames} src={imageSrc} alt={title} />
       </div>
+      <div className="title">{title}</div>
     </div>
   );
 };

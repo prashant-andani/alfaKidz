@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderActions from '../components/HeaderActions/HeaderActions';
 import Card from '../components/Card/Card';
 import { animals } from '../constants';
+import './entertainment.scss';
 
 const Entertainment = () => {
   const renderCards = () =>

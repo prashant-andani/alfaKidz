@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import cx from 'classnames';
 import Header from './components/Header/Header';
 
@@ -14,7 +14,9 @@ function App() {
     <div className={classNames}>
       {isDayTime}
       <Header />
-      <Routes />
+      <div className="main-container">
+        <Routes />
+      </div>
     </div>
   );
 }
