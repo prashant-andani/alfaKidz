@@ -1,0 +1,30 @@
+.learning-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  box-shadow: 0 0 2rem rgba(0,0,255,.1);
+  justify-items: center;
+  padding: 2rem;
+  margin: 2rem;
+  width: 19rem;
+  height: 30rem;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 1.75rem;
+  animation: 1s ease-in-out slideup,1.25s ease-in-out fadein;
+
+  .title {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+  }
+  .img {
+    width: 10rem;
+    margin-bottom: 2rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+}

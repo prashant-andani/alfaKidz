@@ -1,12 +1,12 @@
 import React from 'react';
 import HeaderActions from '../components/HeaderActions/HeaderActions';
 import Card from '../components/Card/Card';
-import { animals } from '../constants';
+import { animalsWithSound } from '../constants';
 import './entertainment.scss';
 
 const Entertainment = () => {
   const renderCards = () =>
-    animals.map((animal, i) => (
+    animalsWithSound.map((animal, i) => (
       <Card key={i} title={animal.name} url={animal.url} image={animal.image} />
     ));
 
