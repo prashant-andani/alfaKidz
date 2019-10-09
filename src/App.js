@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
 import cx from 'classnames';
-import Header from './components/Header/Header';
 
 import Routes from './Routes';
 
@@ -13,7 +12,6 @@ function App() {
   return (
     <div className={classNames}>
       {isDayTime}
-      <Header />
       <div className="main-container">
         <Routes />
       </div>

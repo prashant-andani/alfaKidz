@@ -17,12 +17,12 @@ const LearningCard = ({ title, image }) => {
     window && window.speechSynthesis.speak(msg);
   };
   return (
-    <section className="learning-card" role="click" onClick={speak}>
+    <div className="learning-card" role="button" onClick={speak}>
       <span className="title">{title}</span>
       <div>
         <img loading="lazy" src={imgUrl} className="img" alt={title} />
       </div>
-    </section>
+    </div>
   );
 };
 

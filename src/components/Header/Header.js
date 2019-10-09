@@ -1,33 +1,25 @@
-// import React from 'react';
-// import './Header.scss';
-
-// const Header = () => {
-//   return (
-//     <div className="header">
-//       <div className="title">AlfaKidz</div>
-//     </div>
-//   );
-// };
-
-// export default Header;
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     background: 'white',
-    color: 'black'
+    color: 'black',
+    width: '100%'
   },
   menuButton: {
     marginRight: theme.spacing(2)
   },
   title: {
     flexGrow: 1
+  },
+  titleLink: {
+    textDecoration: 'none'
   }
 }));
 
@@ -39,7 +31,9 @@ export default function ButtonAppBar() {
       <AppBar position="static" className={classes.root}>
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
-            AlfaKidz
+            <Link to="/" className={classes.titleLink}>
+              AlfaKidz
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>

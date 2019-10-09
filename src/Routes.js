@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Loadable from 'react-loadable';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
+import Header from './components/Header/Header';
+
 const LoaderComponent = () => <div>Loading...</div>;
 
 const AsyncEntertainment = Loadable({
@@ -21,6 +23,7 @@ const Routes = ({ childProps }) => {
   };
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route path="/entertainment" exact component={AsyncEntertainment} props={props} />
         <Route path="/learning/:category?" exact component={AsyncLearning} props={props} />
