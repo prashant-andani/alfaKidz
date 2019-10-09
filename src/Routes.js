@@ -1,21 +1,15 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
-import Loadable from 'react-loadable';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from './components/Header/Header';
+import Loadable from './components/Loadable/Loadable';
 
-const LoaderComponent = () => <div>Loading...</div>;
+const Entertainment = lazy(() => import('./containers/entertainment'));
+const AsyncEntertainment = props => Loadable(<Entertainment {...props} />);
 
-const AsyncEntertainment = Loadable({
-  loader: () => import('./containers/entertainment'),
-  loading: LoaderComponent
-});
-
-const AsyncLearning = Loadable({
-  loader: () => import('./containers/learning'),
-  loading: LoaderComponent
-});
+const Learning = lazy(() => import('./containers/learning'));
+const AsyncLearning = props => Loadable(<Learning {...props} />);
 
 const Routes = ({ childProps }) => {
   const props = {

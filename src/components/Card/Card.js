@@ -25,8 +25,7 @@ const Card = ({ title, url, image = '' }) => {
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div className="card hvr-icon-grow" onClick={play}>
+    <div className="card hvr-icon-grow" role="button" onClick={play}>
       <div>
         <img id={title} loading="lazy" className={classNames} src={imageSrc} alt={title} />
       </div>
