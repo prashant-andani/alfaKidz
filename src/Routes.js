@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loadable from 'react-loadable';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 const LoaderComponent = () => <div>Loading...</div>;
 
@@ -20,15 +20,13 @@ const Routes = ({ childProps }) => {
     ...childProps
   };
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/entertainment" exact component={AsyncEntertainment} props={props} />
-        <Route path="/learning/:category?" exact component={AsyncLearning} props={props} />
+    <Switch>
+      <Route path="/entertainment" exact component={AsyncEntertainment} props={props} />
+      <Route path="/learning/:category?" exact component={AsyncLearning} props={props} />
 
-        {/* Finally, catch all unmatched routes */}
-        <Redirect to="/entertainment" />
-      </Switch>
-    </BrowserRouter>
+      {/* Finally, catch all unmatched routes */}
+      <Redirect to="/entertainment" />
+    </Switch>
   );
 };
 
@@ -38,4 +36,4 @@ Routes.propTypes = {
 Routes.defaultProps = {
   childProps: {}
 };
-export default Routes;
+export default withRouter(Routes);

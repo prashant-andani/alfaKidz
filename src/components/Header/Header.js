@@ -1,21 +1,11 @@
-// import React from 'react';
-// import './Header.scss';
-
-// const Header = () => {
-//   return (
-//     <div className="header">
-//       <div className="title">AlfaKidz</div>
-//     </div>
-//   );
-// };
-
-// export default Header;
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+
+import { headerMenu } from '../../constants';
+import GenericMenu from '../Menu/GenericMenu';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,16 +18,25 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
+  },
+  alignment: {
+    top: 8,
+    left: 3
+  },
+  container: {
+    minHeight: 200,
+    width: 260
   }
 }));
 
-export default function ButtonAppBar() {
+export default function Header() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.root}>
         <Toolbar>
+          <GenericMenu menuItems={headerMenu} classes={classes} />
           <Typography variant="h5" className={classes.title}>
             AlfaKidz
           </Typography>

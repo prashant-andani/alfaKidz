@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './LearningCard.scss';
+import { synthesisPrefixes } from '../../constants';
 
 const LearningCard = ({ title, image }) => {
   const imgUrl = `${image}?tr=w-200,h-200`;
@@ -12,7 +13,8 @@ const LearningCard = ({ title, image }) => {
         msg.voice = voice;
       }
     });
-    msg.text = title;
+    const prefix = synthesisPrefixes[Math.floor(Math.random() * synthesisPrefixes.length)];
+    msg.text = `${prefix}${title}`;
 
     window && window.speechSynthesis.speak(msg);
   };
