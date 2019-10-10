@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import cx from 'classnames';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 
 import Routes from './Routes';
@@ -12,11 +13,13 @@ const classNames = cx('App', { day: isDayTime, night: !isDayTime });
 function App() {
   return (
     <div className={classNames}>
-      {isDayTime}
-      <Header />
-      <div className="main-container">
-        <Routes />
-      </div>
+      <BrowserRouter>
+        {isDayTime}
+        <Header />
+        <div className="main-container">
+          <Routes />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
