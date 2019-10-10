@@ -57,16 +57,17 @@ function GenericMenu(props) {
   const prepareMenu = () => {
     return menuItems.map((menuItem, mainMenuIndex) => {
       return (
-        <>
+        <div>
           <span className={classes.menuTitle}>{menuItem.label}</span>
           <List>
-            {menuItem.submenu.map(subMenuItem => {
+            {menuItem.submenu.map((subMenuItem, index) => {
               const iconUrl = `https://ik.imagekit.io/alfakidz/${subMenuItem.icon}?tr=w-20,h-20`;
               return (
                 <ListItem
                   button
                   key={subMenuItem.label}
                   onClick={() => navigate(subMenuItem.route)}
+                  key={index}
                 >
                   <ListItemIcon>
                     <img src={iconUrl} />
@@ -77,7 +78,7 @@ function GenericMenu(props) {
             })}
           </List>
           {mainMenuIndex !== menuItems.length - 1 && <Divider />}
-        </>
+        </div>
       );
     });
   };

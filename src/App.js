@@ -12,15 +12,15 @@ const classNames = cx('App', { day: isDayTime, night: !isDayTime });
 
 function App() {
   return (
-    <div className={classNames}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className={classNames}>
         {isDayTime}
         <Header />
         <div className="main-container">
           <Routes />
         </div>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
