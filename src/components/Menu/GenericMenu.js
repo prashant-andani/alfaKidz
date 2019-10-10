@@ -110,7 +110,7 @@ function GenericMenu(props) {
 }
 
 GenericMenu.propTypes = {
-  menuItems: PropTypes.object.isRequired,
+  menuItems: PropTypes.array.isRequired,
   history: PropTypes.object.isRequired
 };
 
