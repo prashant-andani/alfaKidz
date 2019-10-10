@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './LearningCard.scss';
-import { synthesisPrefixes } from '../../constants';
+import { synthesisPrefixes } from '../../constants/index';
 
 const LearningCard = ({ title, image }) => {
   const imgUrl = `${image}?tr=w-200,h-200`;

@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import { headerMenu } from '../../constants';
+import { headerMenu } from '../../constants/index';
 import GenericMenu from '../Menu/GenericMenu';
 
 const useStyles = makeStyles(theme => ({

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LearningCard from '../components/LearningCard/LearningCard';
 import './learning.scss';
-import { animals, vegetables, fruits } from '../constants';
+import { animals, vegetables, fruits } from '../constants/index';
 
 const Learning = ({ match }) => {
   let list = [];

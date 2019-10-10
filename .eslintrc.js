@@ -7,7 +7,7 @@ module.exports = {
   parser: 'babel-eslint',
   rules: {
     quotes: [2, 'single'],
-    'import/extensions': [0],
+    'import/extensions': [1],
     'no-console': [2],
     'no-underscore-dangle': [0],
     'react/no-find-dom-node': [0],
