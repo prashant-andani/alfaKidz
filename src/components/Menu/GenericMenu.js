@@ -65,12 +65,11 @@ function GenericMenu(props) {
               return (
                 <ListItem
                   button
-                  key={subMenuItem.label}
                   onClick={() => navigate(subMenuItem.route)}
-                  key={index}
+                  key={`${subMenuItem.label}-${index}`}
                 >
                   <ListItemIcon>
-                    <img src={iconUrl} />
+                    <img src={iconUrl} alt={iconUrl} />
                   </ListItemIcon>
                   <ListItemText primary={subMenuItem.label} />
                 </ListItem>
