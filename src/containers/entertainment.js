@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderActions from '../components/HeaderActions/HeaderActions';
 import Card from '../components/Card/Card';
-import { animalsWithSound } from '../constants';
+import { animalsWithSound } from '../constants/index';
 import './entertainment.scss';
 
 const Entertainment = () => {
