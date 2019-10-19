@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   height: 100vh;
+  width: 100%;
 }
 .day {
   background-color: white;
@@ -13,9 +14,17 @@
   background-color: #fff;
 }
 
+.header-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
 .main-container {
   width: 100%;
   min-height: 100vh;
+  padding-top: 70px;
   display: flex;
   align-items: center;
   flex-flow: column;

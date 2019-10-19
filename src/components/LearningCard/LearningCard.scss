@@ -28,3 +28,9 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .learning-card {
+    width: 15rem;
+  }
+}
