@@ -134,4 +134,6 @@ const animals = [
 ];
 const birds = [];
 
-export { alphabets, animals, birds, vegetables, fruits };
+const countries = [];
+
+export { alphabets, animals, birds, countries, vegetables, fruits };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LearningCard from '../components/LearningCard/LearningCard';
 import './learning.scss';
-import { animals, vegetables, fruits } from '../constants/index';
+import { animals, countries, vegetables, fruits } from '../constants/index';
 
 const Learning = ({ match }) => {
   let list = [];
@@ -15,6 +15,9 @@ const Learning = ({ match }) => {
       break;
     case 'fruits':
       list = fruits;
+      break;
+    case 'countries':
+      list = countries;
       break;
     default:
       list = animals;
