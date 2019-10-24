@@ -15,7 +15,9 @@ function App() {
     <BrowserRouter>
       <div className={classNames}>
         {isDayTime}
-        <Header />
+        <div className="header-container">
+          <Header />
+        </div>
         <div className="main-container">
           <Routes />
         </div>
