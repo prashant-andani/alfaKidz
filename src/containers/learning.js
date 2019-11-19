@@ -1,32 +1,80 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LearningCard from '../components/LearningCard/LearningCard';
 import './learning.scss';
 import { animals, countries, vegetables, fruits } from '../constants/index';
+import isDesktop from '../Utilities';
 
-const Learning = ({ match }) => {
-  let list = [];
-  switch (match.params.category) {
-    case 'animals':
-      list = animals;
-      break;
-    case 'vegetables':
-      list = vegetables;
-      break;
-    case 'fruits':
-      list = fruits;
-      break;
-    case 'countries':
-      list = countries;
-      break;
-    default:
-      list = animals;
-      break;
+class Learning extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+      list: [],
+      category: ''
+    };
   }
-  const renderCards = data =>
+
+  static getDerivedStateFromProps(props, state) {
+    const { match } = props;
+    let list = [];
+    const { category } = match.params;
+    switch (category) {
+      case 'animals':
+        list = animals;
+        break;
+      case 'vegetables':
+        list = vegetables;
+        break;
+      case 'fruits':
+        list = fruits;
+        break;
+      case 'countries':
+        list = countries;
+        break;
+      default:
+        list = animals;
+        break;
+    }
+    let { index } = state;
+    if (state.category !== category) {
+      index = 0;
+    }
+    return { list, index, category };
+  }
+
+  onSwipe = side => {
+    const { list, index } = this.state;
+    // Left: true, Right: false
+    if (side) {
+      this.setState({
+        index: index < list.length - 1 ? index + 1 : list.length - 1
+      });
+    } else {
+      this.setState({ index: index > 0 ? index - 1 : 0 });
+    }
+    this.renderCard(list[this.state.index]);
+  };
+
+  renderCards = data =>
     data.map((animal, i) => <LearningCard key={i} title={animal.name} image={animal.image} />);
-  return <div className="card-container">{renderCards(list)}</div>;
-};
+
+  renderCard = card => {
+    if (card) {
+      return <LearningCard title={card.name} image={card.image} onSwipe={this.onSwipe} />;
+    }
+    return null;
+  };
+
+  render() {
+    const { list, index } = this.state;
+    return (
+      <div className="card-container">
+        {isDesktop() ? this.renderCards(list) : this.renderCard(list[index])}
+      </div>
+    );
+  }
+}
 
 Learning.propTypes = {
   match: PropTypes.object.isRequired
