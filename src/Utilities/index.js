@@ -1,3 +1,7 @@
+/* 
+  Check if User agent is Small screens [mobile, tablets, etc] or Desktop.
+  Return true if Desktop.
+*/
 const isDesktop = () => {
   if (
     navigator.userAgent.match(/Android/i) ||

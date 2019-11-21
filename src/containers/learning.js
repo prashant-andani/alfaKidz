@@ -85,6 +85,10 @@ class Learning extends Component {
   };
 
   render() {
+    /*
+      If User agent is Desktop, load all cards.
+      If User agent is small screens [Mobile, Tablets, etc]... load single card in a screen.
+    */
     const { list, index } = this.state;
     return (
       <div className="card-container">
