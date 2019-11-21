@@ -11,7 +11,8 @@ class Learning extends Component {
     this.state = {
       index: 0,
       list: [],
-      category: ''
+      category: '',
+      fadeInClass: ''
     };
   }
 
@@ -47,11 +48,21 @@ class Learning extends Component {
     const { list, index } = this.state;
     // Left: true, Right: false
     if (side) {
-      this.setState({
-        index: index < list.length - 1 ? index + 1 : list.length - 1
+      if (index < list.length - 1) {
+        this.setState(
+          {
+            index: index < list.length - 1 ? index + 1 : list.length - 1,
+            fadeInClass: 'fade-in-right'
+          },
+          () => {
+            setTimeout(() => this.setState({ fadeInClass: '' }), 300);
+          }
+        );
+      }
+    } else if (index > 0) {
+      this.setState({ index: index > 0 ? index - 1 : 0, fadeInClass: 'fade-in-left' }, () => {
+        setTimeout(() => this.setState({ fadeInClass: '' }), 300);
       });
-    } else {
-      this.setState({ index: index > 0 ? index - 1 : 0 });
     }
     this.renderCard(list[this.state.index]);
   };
@@ -61,7 +72,14 @@ class Learning extends Component {
 
   renderCard = card => {
     if (card) {
-      return <LearningCard title={card.name} image={card.image} onSwipe={this.onSwipe} />;
+      return (
+        <LearningCard
+          title={card.name}
+          image={card.image}
+          fadeInClass={this.state.fadeInClass}
+          onSwipe={this.onSwipe}
+        />
+      );
     }
     return null;
   };

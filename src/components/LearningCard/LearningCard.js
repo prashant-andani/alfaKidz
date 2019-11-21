@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './LearningCard.scss';
+import cx from 'classnames';
 import { synthesisPrefix } from '../../constants/index';
 
-const LearningCard = ({ title, image, onSwipe }) => {
+const LearningCard = ({ title, image, fadeInClass, onSwipe }) => {
+  const containerClass = cx('learning-card', fadeInClass);
   const imgUrl = `${image}?tr=w-200,h-200`;
   const msg = new SpeechSynthesisUtterance();
   const myRef = React.createRef();
@@ -44,10 +46,9 @@ const LearningCard = ({ title, image, onSwipe }) => {
 
   return (
     <div
-      className="learning-card"
+      className={containerClass}
       role="button"
       ref={myRef}
-      id="gestureZone"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onClick={speak}
@@ -63,9 +64,12 @@ const LearningCard = ({ title, image, onSwipe }) => {
 LearningCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  fadeInClass: PropTypes.string,
   onSwipe: PropTypes.func.isRequired
 };
 
-LearningCard.defaultProps = {};
+LearningCard.defaultProps = {
+  fadeInClass: ''
+};
 
 export default LearningCard;
