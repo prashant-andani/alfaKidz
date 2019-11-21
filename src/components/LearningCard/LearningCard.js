@@ -32,13 +32,20 @@ const LearningCard = ({ title, image, fadeInClass, onSwipe }) => {
     touchendX = event.changedTouches[0].screenX;
     handleGesture();
   };
+  /* 
+    Swipe functionality works for only mobile or table screens. 
+    Every screen in learning section will pop single card.
+    On swipe left, if any card on the left in array will be rendered.
+    On swipe right, if any card on the right in array will be rendered.
+    Minimum swipe required is: 100px.
+    On event onSwipe takes boolean: [true: Swiped left, false: Swiped right].
+  */
   const handleGesture = () => {
-    // After minimum of 100px swipe, triggers
-    // swipe left
+    // Swipe left
     if (touchendX < touchstartX - 100) {
       onSwipe(true);
     }
-    // swipe right
+    // Swipe right
     if (touchendX > touchstartX + 100) {
       onSwipe(false);
     }
