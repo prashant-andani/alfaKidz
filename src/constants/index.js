@@ -1,6 +1,6 @@
 import { alphabets, animals, birds, vegetables, fruits, countries } from './learning';
 import animalsWithSound from './entertainment';
-import { headers, headerMenu, synthesisPrefixes } from './utils';
+import { headers, headerMenu, synthesisPrefix } from './utils';
 
 export {
   alphabets,
@@ -11,6 +11,6 @@ export {
   vegetables,
   fruits,
   headerMenu,
-  synthesisPrefixes,
+  synthesisPrefix,
   countries
 };
