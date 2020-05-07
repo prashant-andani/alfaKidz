@@ -53,6 +53,6 @@ const headerMenu = [
   }
 ];
 
-const synthesisPrefixes = ['I am, ', 'This is, ', 'Hello, I am '];
+const synthesisPrefix = 'This is, ';
 
-export { headers, headerMenu, synthesisPrefixes };
+export { headers, headerMenu, synthesisPrefix };
