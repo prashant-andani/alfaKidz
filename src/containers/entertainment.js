@@ -13,7 +13,7 @@ const Entertainment = () => {
   return (
     <>
       <HeaderActions />
-      <section className="cards">{renderCards()} </section>
+      <section className="cards"> {renderCards()} </section>{' '}
     </>
   );
 };

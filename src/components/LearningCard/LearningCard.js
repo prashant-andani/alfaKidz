@@ -4,6 +4,8 @@ import './LearningCard.scss';
 import cx from 'classnames';
 import { synthesisPrefix } from '../../constants/index';
 
+const VOICE = 'Samantha';
+
 const LearningCard = ({ title, image, fadeInClass, onSwipe }) => {
   const containerClass = cx('learning-card', fadeInClass);
   const imgUrl = `${image}?tr=w-200,h-200`;
@@ -12,7 +14,7 @@ const LearningCard = ({ title, image, fadeInClass, onSwipe }) => {
 
   const speak = () => {
     speechSynthesis.getVoices().forEach(voice => {
-      if (voice.name === 'Samantha') {
+      if (voice.name === VOICE) {
         msg.voice = voice;
       }
     });
