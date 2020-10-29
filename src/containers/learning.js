@@ -41,7 +41,11 @@ class Learning extends Component {
     if (state.category !== category) {
       index = 0;
     }
-    return { list, index, category };
+    return {
+      list,
+      index,
+      category
+    };
   }
 
   onSwipe = side => {
@@ -55,14 +59,32 @@ class Learning extends Component {
             fadeInClass: 'fade-in-right'
           },
           () => {
-            setTimeout(() => this.setState({ fadeInClass: '' }), 300);
+            setTimeout(
+              () =>
+                this.setState({
+                  fadeInClass: ''
+                }),
+              300
+            );
           }
         );
       }
     } else if (index > 0) {
-      this.setState({ index: index > 0 ? index - 1 : 0, fadeInClass: 'fade-in-left' }, () => {
-        setTimeout(() => this.setState({ fadeInClass: '' }), 300);
-      });
+      this.setState(
+        {
+          index: index > 0 ? index - 1 : 0,
+          fadeInClass: 'fade-in-left'
+        },
+        () => {
+          setTimeout(
+            () =>
+              this.setState({
+                fadeInClass: ''
+              }),
+            300
+          );
+        }
+      );
     }
     this.renderCard(list[this.state.index]);
   };
@@ -86,13 +108,14 @@ class Learning extends Component {
 
   render() {
     /*
-      If User agent is Desktop, load all cards.
-      If User agent is small screens [Mobile, Tablets, etc]... load single card in a screen.
-    */
+          If User agent is Desktop, load all cards.
+          If User agent is small screens [Mobile, Tablets, etc]... load single card in a screen.
+        */
     const { list, index } = this.state;
     return (
       <div className="card-container">
-        {isDesktop() ? this.renderCards(list) : this.renderCard(list[index])}
+        {' '}
+        {isDesktop() ? this.renderCards(list) : this.renderCard(list[index])}{' '}
       </div>
     );
   }
