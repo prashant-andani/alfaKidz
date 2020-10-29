@@ -6,9 +6,10 @@ import './entertainment.scss';
 
 const Entertainment = () => {
   const renderCards = () =>
-    animalsWithSound.map((animal, i) => (
-      <Card key={i} title={animal.name} url={animal.url} image={animal.image} />
-    ));
+    animalsWithSound.map((animal, i) => {
+      const { name, url, image } = animal;
+      return <Card key={i} title={name} url={url} image={image} />;
+    });
 
   return (
     <>
